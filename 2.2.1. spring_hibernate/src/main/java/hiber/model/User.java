@@ -34,6 +34,13 @@ public class User {
       this.email = email;
    }
 
+   public User(String firstName, String lastName, String email, Car userCar) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+      this.userCar = userCar;
+   }
+
    public Long getId() {
       return id;
    }
@@ -65,5 +72,14 @@ public class User {
    public void setEmail(String email) {
       this.email = email;
    }
+
+   public Car getUserCar() {
+      return userCar;
+   }
+
+   public void setUserCar(Car userCar) {
+      this.userCar = userCar;
+   }
+
 
 }
