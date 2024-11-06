@@ -22,7 +22,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @Column(name = "id_car")
+   @JoinColumn(name = "id_car")
    @OneToOne
    private Car userCar;
 
