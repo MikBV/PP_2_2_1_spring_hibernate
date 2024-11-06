@@ -56,12 +56,14 @@ public class Car {
         this.series = series;
     }
 
+    /**
+     * Переопределённый toString
+     */
     @Override
     public String toString() {
-        return "Car{" +
-                "id_car=" + id_car +
-                ", model='" + model + '\'' +
-                ", series=" + series +
-                '}';
+        return "Car \n" +
+                "\t id_car=" + id_car +
+                ", \n\t model='" + model +
+                ", \n\t series=" + series;
     }
 }

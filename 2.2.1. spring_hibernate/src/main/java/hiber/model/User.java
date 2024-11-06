@@ -3,12 +3,11 @@ package hiber.model;
 import javax.persistence.*;
 
 /**
- * Класс-сущеность юзер
+ * Класс-сущность юзер
  */
 @Entity
 @Table(name = "users")
 public class User {
-
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
@@ -23,8 +22,12 @@ public class User {
    private String email;
 
    @JoinColumn(name = "id_car")
-   @OneToOne
+   @OneToOne (cascade = CascadeType.ALL)
    private Car userCar;
+
+   /**
+    * Конструкторы для класса-сущности
+    */
 
    public User() {}
    
@@ -41,13 +44,19 @@ public class User {
       this.userCar = userCar;
    }
 
+   /**
+    * Геттеры и сеттеры полей
+    */
+
    public Long getId() {
       return id;
    }
 
+   //закомменчен, чтобы не было возможности менять id
+   /*
    public void setId(Long id) {
       this.id = id;
-   }
+   }*/
 
    public String getFirstName() {
       return firstName;
