@@ -10,6 +10,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class MainApp {
+   static void checkSearchByCar (User user) {
+      if (user==null) {
+         System.out.printf("I did'n find user with such car\n");
+      } else {
+         System.out.printf("I find user %s %s with such car\n", user.getFirstName(), user.getLastName());
+      }
+   }
    public static void main(String[] args) throws SQLException {
       AnnotationConfigApplicationContext context = 
             new AnnotationConfigApplicationContext(AppConfig.class);
@@ -29,6 +36,15 @@ public class MainApp {
          System.out.println("Email = "+user.getEmail());
          System.out.println(user.getUserCar().toString());
       }
+
+      String model = "Toyota";
+      String model2 = "Toyota2";
+      int series = 0;
+      int series2 = 222;
+      checkSearchByCar(userService.getUserForCar(model, series));
+      checkSearchByCar(userService.getUserForCar(model2, series2));
+
+
 
       context.close();
    }
